@@ -38,5 +38,4 @@ footer: Copyright © 2023-present hatide | hatide2023@gmail.com
 #   - name: author
 #     content: hatide
 ---
-## Danh sách tất cả bài viết
 <all-posts />

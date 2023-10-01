@@ -1,0 +1,99 @@
+---
+title: Khái niệm về sc_module
+category: systemc
+createdAt: 2023-8-12
+lang: 'vi-VN'
+description: Khái niệm về sc_module
+meta:
+  - name: description
+    content: Khái niệm về sc_module
+  - name: keywords
+    content: systemc,sc_module
+
+prev: false
+next: false
+---
+
+![image_2](/img/systemc/4_modules_images/image_2.png)
+
+# Khaí niệm: 
+
+Điểm bắt đầu chương trình: Mọi chương trình (programs) đều có 1 điểm bắt đầu (starting point). Trong C/C++, starting point là main. Trong SystemC, starting point là sc_main 
+```
+int sc_main(int argc, char* argv[]) {
+   elaboration
+   sc_start(); // bắt đầu và kết thúc simulation
+   // function
+   post-processing
+   return exit_code;
+}
+```
+
+sc_module là đơn vị thiết kế căn bản: Một systemc module là đơn vị nhỏ nhất chứa các chắc năng, hành vi và kiến trúc phân cấp. Systemc module là 1 class C++ chứa đựng các tính năng.
+* Ports
+* Member channel ínstances
+* Member data ínstances
+* Member module instances (sub designs)
+* Constructor
+* Destructor
+* Simulation process member functions (processes)
+* Other method (member functions …)
+
+## SC_HAS_PROCESS macro: 
+Được sử dung khi
+* Yêu cầu contructor với đối số truyền vào khi sử dụng SC_CTOR macro.
+* Khi bạn muốn báo cho trình biên dịch nơi mà constructor được thực hiện (.cpp file).
+
+## Khai báo: 
+* Cách 1: Sử dụng macro SC_MODULE: 
+```
+#include <systemc>
+SC_MODULE(module_name) {
+// MODULE_BODY
+};
+```
+* Cách 2: Kế thừa từ class sc_module:
+```
+#include <systemc>
+class module_name : public sc_module {
+public:
+// MODULE_BODY
+};
+```
+
+## Cách dùng:
+ SC_MODULE là một C++ class nên cần constructor. Trong constructor thể hiện một vài tác vụ đặc thù của systemc như:
+* Initializing/allocating sub-design
+* Connecting sub-designs
+* Registering process 
+* Providing static sensitivity
+* Miscellaneous user-defined setup
+
+### Cách 1: 
+Sử dụng macro SC_MODULE -> SC_CTOR macro cho constructor
+```
+SC_MODULE(module_name) {
+SC_CTOR(module_name)
+: Initialization // C++ initialization list
+ {
+  Subdesign_Allocation
+  Subdesign_Connectivity
+  Process_Registration
+  Miscellaneous_Setup
+ }
+};
+```
+### Cách 2: 
+Kết thừa c++ sc_module class
+```
+class module_name : public sc_module {
+module_name();
+~ module_name();
+public:
+MODULE_BODY
+};
+``` 
+Ví dụ: 
+
+![image_1](/img/systemc/4_modules_images/image_1.png)
+		

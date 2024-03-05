@@ -13,7 +13,7 @@ meta:
 prev: false
 next: false
 ---
-1. Clone respo `git clone https://github.com/hatide/bai_viet_vi_mach_tum_lum.git`
+1. Clone respo `git clone https://github.com/hatide/hatide.github.io.git`
 2. Tạo new branch `git checkout -b <tên branch>`
 3. Tạo file .md vào thư mục post.
 ![1_image](/img/general/new_post/Capture.PNG)

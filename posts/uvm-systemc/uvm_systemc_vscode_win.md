@@ -51,9 +51,9 @@ Configuration summary of UVM-SystemC 1.0-beta5 for x86_64-unknown-linux-gnu
    Regular expression library:      POSIX
 ------------------------------------------------------------------------------
 
-4. Tiến hành compile với lệnh `make`
-
-
+4. Tiến hành compile và cài đặt với lệnh `make install`
+Libraries have been installed in:
+   <PATH>/uvm-systemc-1.0-beta5/lib-linux64
 
 Tham khảo: 
 

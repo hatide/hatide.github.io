@@ -44,6 +44,7 @@ module.exports = {
         { text: 'UVM', link: '/danh-muc/uvm' },
         { text: 'TLM2', link: '/danh-muc/tlm2' },
         { text: 'DPI-C', link: '/danh-muc/dpi-c' },
+        { text: 'System-RDL', link: '/danh-muc/system_rdl' },
         { text: 'General', link: '/danh-muc/general' },
       ],
     },

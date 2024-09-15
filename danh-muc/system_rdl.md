@@ -4,7 +4,7 @@ sidebar: auto
 lang: 'vi-VN'
 ---
 
-## Danh sách bài viết chủ đề SystemC
+## Danh sách bài viết chủ đề System_RDL
 
 - [1. Tổng quan](/posts/system_rdl/1_0.md)
 

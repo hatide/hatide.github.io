@@ -23,7 +23,7 @@
         <a href="https://hatide.github.io/danh-muc/general.html">Tổng hợp W.I.P</a>
       </p>
       <p>
-        <a href="https://hatide.github.io/about/">Liên hệ - Donate</a>
+        <a href="https://hatide.github.io/about/">Liên hệ</a>
       </p>
     </div>
     <div class="menu-column">
